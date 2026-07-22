@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¡Gracias! — Cocina Sin Vueltas</title>
+<style>
+  body{font-family:Georgia,serif; color:#2B2622; background:#F5E9DA; margin:0; display:flex; min-height:100vh; align-items:center; justify-content:center; padding:20px}
+  .box{background:#FFFDF9; border-radius:18px; max-width:480px; text-align:center; padding:40px 30px; box-shadow:0 16px 40px rgba(43,38,34,.15)}
+  h1{color:#C9663C; font-size:30px; margin:0 0 12px}
+  p{line-height:1.6; margin:10px 0}
+  .chico{font-size:13.5px; color:#6B7A4F}
+</style>
+</head>
+<body>
+  <div class="box">
+    <div style="font-size:52px">🧡</div>
+    <h1>¡Listo! Tu recetario está en camino</h1>
+    <p>Apenas MercadoPago confirme el pago (suele ser al toque), te llega un mail con el <b>link de descarga</b>. Si pusiste tu WhatsApp, también te lo mandamos por ahí.</p>
+    <div id="directo" style="display:none; margin-top:14px">
+      <a id="btn-descarga" href="#" style="display:inline-block; background:#C9663C; color:#fff; text-decoration:none; font-weight:bold; font-family:-apple-system,Arial,sans-serif; padding:14px 30px; border-radius:10px; font-size:17px">⬇️ Descargar el recetario ahora</a>
+      <p class="chico" style="margin-top:8px">El link dura 7 días — guardá el PDF, es tuyo para siempre.</p>
+    </div>
+    <p class="chico">¿No te llegó en 10 minutos? Revisá spam/promociones, y si no está, escribinos a hola@cocinasinvueltas.com.ar y te lo reenviamos al instante.</p>
+  </div>
+<script>
+  // MP vuelve con ?payment_id=... — validamos contra la API y mostramos
+  // el botón de descarga directa (además del mail).
+  const API = "https://veriko-api-production.up.railway.app/recetario";
+  const pid = new URLSearchParams(location.search).get("payment_id");
+  if (pid) {
+    fetch(`${API}/link/${pid}`).then(r => r.json()).then(d => {
+      if (d.status === "approved" && d.url) {
+        document.getElementById("btn-descarga").href = d.url;
+        document.getElementById("directo").style.display = "block";
+      }
+    }).catch(() => {});
+  }
+</script>
+</body>
+</html>
