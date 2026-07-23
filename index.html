@@ -40,7 +40,7 @@
   .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--ember);box-shadow:0 0 10px var(--ember);animation:pulso 2.2s infinite}
   @keyframes pulso{0%,100%{opacity:1}50%{opacity:.35}}
   h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(42px,7.4vw,84px);line-height:1.02;margin:26px auto 20px;max-width:900px;letter-spacing:-1px;color:var(--carbon)}
-  h1 .fx{background:linear-gradient(100deg,var(--ember) 5%,var(--terra) 55%,var(--terra2) 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  h1 .fx{color:var(--terra);font-style:italic}
   .sub{font-size:clamp(16px,2.4vw,20px);color:var(--suave);max-width:640px;margin:0 auto 34px}
   .sub b{color:var(--carbon)}
   .cta{display:inline-block;background:linear-gradient(135deg,var(--ember),var(--terra));color:#fff;text-decoration:none;font-weight:800;font-size:19px;padding:19px 46px;border-radius:16px;box-shadow:0 12px 36px rgba(201,102,60,.35);transition:transform .18s, box-shadow .18s}
@@ -111,6 +111,21 @@
   .mbar a{display:block;text-align:center;background:linear-gradient(135deg,var(--ember),var(--terra));color:#fff;text-decoration:none;font-weight:800;font-size:16.5px;padding:15px;border-radius:14px;box-shadow:0 6px 20px rgba(201,102,60,.35)}
   @media(max-width:760px){.mbar{display:block}}
 
+
+  /* banda de fotos reales */
+  .fotos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:8px}
+  .fotos figure{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3}
+  .fotos img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+  .fotos figure:hover img{transform:scale(1.05)}
+  .fotos figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 14px 10px;font-size:13px;font-weight:800;color:#fff;background:linear-gradient(transparent,rgba(20,14,10,.75));letter-spacing:.5px}
+  @media(max-width:700px){.fotos{grid-template-columns:repeat(2,1fr)}}
+
+  /* muestra del interior */
+  .muestra{display:flex;gap:18px;justify-content:center;align-items:flex-start;overflow-x:auto;padding:10px 4px 22px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
+  .muestra img{width:min(300px,72vw);flex:none;border-radius:14px;box-shadow:0 18px 44px rgba(43,38,34,.22);border:1px solid var(--borde);scroll-snap-align:center}
+  .muestra img:nth-child(2){transform:translateY(16px)}
+  .nota-muestra{text-align:center;color:#8d8171;font-size:13.5px;margin-top:6px}
+
   /* reveals */
   .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
   .rv.on{opacity:1;transform:none}
@@ -147,9 +162,9 @@
     <a class="cta" href="#comprar" data-checkout>Quiero las +500 recetas<small>Pago único · MercadoPago hasta 3 cuotas</small></a>
     <div class="cover-zone"><img class="cover" src="portada.jpg" alt="Recetario Cocina de Aire"></div>
     <div class="badges">
-      <span class="badge">📄 PDF — lo leés en el celu</span>
-      <span class="badge">⚡ Entrega inmediata</span>
-      <span class="badge">💳 Pago único, sin suscripción</span>
+      <span class="badge">PDF — lo leés en el celu</span>
+      <span class="badge">Entrega inmediata</span>
+      <span class="badge">Pago único, sin suscripción</span>
     </div>
   </div>
 </header>
@@ -162,6 +177,20 @@
     <div class="stat rv"><b>0</b><span>"cups" y fahrenheit</span></div>
   </div>
 </div>
+
+
+<section style="padding:72px 0 60px">
+  <div class="wrap">
+    <h2 class="rv">Comida de verdad, de acá</h2>
+    <p class="lead rv">Nada de recetas de laboratorio: los platos que ya comés, resueltos en la freidora.</p>
+    <div class="fotos rv">
+      <figure><img src="img/carnes.jpg" alt="Carnes a la airfryer" loading="lazy"><figcaption>Carnes y pollo</figcaption></figure>
+      <figure><img src="img/verduras.jpg" alt="Verduras y guarniciones" loading="lazy"><figcaption>Verduras y snacks</figcaption></figure>
+      <figure><img src="img/pescados.jpg" alt="Pescados y tartas" loading="lazy"><figcaption>Pescados y tartas</figcaption></figure>
+      <figure><img src="img/postres.jpg" alt="Postres y dulces" loading="lazy"><figcaption>Postres y dulces</figcaption></figure>
+    </div>
+  </div>
+</section>
 
 <section>
   <div class="wrap">
@@ -207,6 +236,20 @@
       <div class="bono"><span class="ic">🧽</span><span>Limpieza y cuidado de tu freidora sin drama</span></div>
       <div class="bono"><span class="ic">⚠️</span><span>Los 12 errores que arruinan tus recetas (y cómo evitarlos)</span></div>
     </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="wrap">
+    <h2 class="rv">Así se ve por adentro</h2>
+    <p class="lead rv">Cada receta con sus ingredientes, el paso a paso y la temperatura y el tiempo exactos. Sin adivinar.</p>
+    <div class="muestra rv">
+      <img src="img/post1.png" alt="Receta: milanesas bien crocantes" loading="lazy">
+      <img src="img/post2.png" alt="Receta: gajos de papa a la española" loading="lazy">
+      <img src="img/post3.png" alt="Receta: brownies en la airfryer" loading="lazy">
+    </div>
+    <p class="nota-muestra rv">Tres de las 503 recetas, tal cual las vas a ver.</p>
   </div>
 </section>
 
