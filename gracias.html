@@ -4,28 +4,29 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>¡Gracias! — Cocina de Aire</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-  body{font-family:Georgia,serif; color:#2B2622; background:#F5E9DA; margin:0; display:flex; min-height:100vh; align-items:center; justify-content:center; padding:20px}
-  .box{background:#FFFDF9; border-radius:18px; max-width:480px; text-align:center; padding:40px 30px; box-shadow:0 16px 40px rgba(43,38,34,.15)}
-  h1{color:#C9663C; font-size:30px; margin:0 0 12px}
-  p{line-height:1.6; margin:10px 0}
-  .chico{font-size:13.5px; color:#6B7A4F}
+  body{margin:0;font-family:'Inter',sans-serif;background:#14100D;color:#F5E9DA;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;
+    background-image:radial-gradient(500px 400px at 50% 0%, rgba(255,122,69,.18), transparent 70%)}
+  .box{background:#1D1713;border:1px solid rgba(245,233,218,.14);border-radius:28px;max-width:500px;text-align:center;padding:48px 34px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  h1{font-family:'Fraunces',serif;font-weight:900;color:#FF7A45;font-size:32px;margin:14px 0 12px;line-height:1.1}
+  p{line-height:1.6;margin:10px 0;color:#CBBFAE;font-size:15.5px}
+  .chico{font-size:13px;color:#8FA26B}
+  .btn{display:inline-block;background:linear-gradient(135deg,#FF7A45,#C9663C);color:#fff;text-decoration:none;font-weight:800;padding:16px 34px;border-radius:14px;font-size:17px;margin-top:8px;box-shadow:0 10px 34px rgba(255,122,69,.4)}
 </style>
 </head>
 <body>
   <div class="box">
-    <div style="font-size:52px">🧡</div>
+    <div style="font-size:52px">🔥</div>
     <h1>¡Listo! Tu recetario está en camino</h1>
-    <p>Apenas MercadoPago confirme el pago (suele ser al toque), te llega un mail con el <b>link de descarga</b>. Si pusiste tu WhatsApp, también te lo mandamos por ahí.</p>
-    <div id="directo" style="display:none; margin-top:14px">
-      <a id="btn-descarga" href="#" style="display:inline-block; background:#C9663C; color:#fff; text-decoration:none; font-weight:bold; font-family:-apple-system,Arial,sans-serif; padding:14px 30px; border-radius:10px; font-size:17px">⬇️ Descargar el recetario ahora</a>
-      <p class="chico" style="margin-top:8px">El link dura 7 días — guardá el PDF, es tuyo para siempre.</p>
+    <p>Apenas MercadoPago confirme el pago (suele ser al toque), acá abajo aparece tu descarga — y también te mandamos el link por mail.</p>
+    <div id="directo" style="display:none;margin:18px 0 6px">
+      <a id="btn-descarga" href="#" class="btn">⬇️ Descargar el recetario ahora</a>
+      <p class="chico" style="margin-top:10px">El link dura 7 días — guardá el PDF, es tuyo para siempre.</p>
     </div>
-    <p class="chico">¿No te llegó en 10 minutos? Revisá spam/promociones, y si no está, escribinos a hola@cocinadeaire.org y te lo reenviamos al instante.</p>
+    <p class="chico">¿No aparece el botón ni te llegó el mail en 10 minutos? Revisá spam, y si no está escribinos a hola@cocinadeaire.org y te lo reenviamos al instante.</p>
   </div>
 <script>
-  // MP vuelve con ?payment_id=... — validamos contra la API y mostramos
-  // el botón de descarga directa (además del mail).
   const API = "https://veriko-api-production.up.railway.app/recetario";
   const pid = new URLSearchParams(location.search).get("payment_id");
   if (pid) {

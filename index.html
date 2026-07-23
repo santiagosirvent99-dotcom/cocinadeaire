@@ -3,191 +3,268 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>+500 Recetas Argentinas para tu Airfryer — Cocina de Aire</title>
-<meta name="description" content="El recetario argentino más completo para freidora de aire: +500 recetas con tiempos y temperaturas exactos, ingredientes de acá. Pago único, entrega inmediata.">
+<title>Cocina de Aire — +500 Recetas Argentinas para tu Airfryer</title>
+<meta name="description" content="El recetario argentino más completo para freidora de aire: +500 recetas con tiempos y temperaturas exactos. Pago único, entrega inmediata.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 <!-- META PIXEL: pegar acá el snippet cuando exista la cuenta publicitaria -->
 <style>
   :root{
-    --terracota:#C9663C; --crema:#F5E9DA; --oliva:#6B7A4F; --carbon:#2B2622;
-    --blanco:#FFFDF9;
+    --bg:#14100D; --bg2:#1D1713; --carbon:#2B2622;
+    --ember:#FF7A45; --terra:#C9663C; --terra2:#A94F2C;
+    --crema:#F5E9DA; --hueso:#FFFDF9; --oliva:#8FA26B;
+    --glass:rgba(255,253,249,.05); --borde:rgba(245,233,218,.14);
   }
-  *{box-sizing:border-box; margin:0; padding:0}
-  body{font-family:Georgia,'Times New Roman',serif; color:var(--carbon); background:var(--blanco); line-height:1.55}
-  .wrap{max-width:680px; margin:0 auto; padding:0 20px}
-  .sans{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--crema);line-height:1.6;overflow-x:hidden}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 22px}
 
-  /* barra sticky */
-  .topbar{position:sticky; top:0; z-index:50; background:var(--carbon); color:var(--crema); padding:9px 14px; display:flex; justify-content:space-between; align-items:center; gap:10px}
-  .topbar .marca{font-size:13px; letter-spacing:2.5px; text-transform:uppercase}
-  .topbar a{background:var(--terracota); color:#fff; text-decoration:none; padding:8px 16px; border-radius:999px; font-size:14px; font-weight:bold}
+  /* ─── nav ─── */
+  nav{position:fixed;top:0;left:0;right:0;z-index:90;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:rgba(20,16,13,.65);border-bottom:1px solid var(--borde)}
+  .nav-in{max-width:1060px;margin:0 auto;padding:14px 22px;display:flex;justify-content:space-between;align-items:center}
+  .logo{font-family:'Fraunces',serif;font-weight:900;font-size:19px;color:var(--crema);text-decoration:none;letter-spacing:.4px}
+  .logo em{color:var(--ember);font-style:normal}
+  .nav-cta{background:linear-gradient(135deg,var(--ember),var(--terra));color:#fff;text-decoration:none;font-weight:800;font-size:14px;padding:10px 22px;border-radius:999px;box-shadow:0 4px 24px rgba(255,122,69,.35);transition:transform .15s}
+  .nav-cta:hover{transform:translateY(-1px)}
 
-  .hero{background:var(--crema); text-align:center; padding:44px 0 36px}
-  .kicker{color:var(--oliva); letter-spacing:3px; text-transform:uppercase; font-size:12px; margin-bottom:14px}
-  h1{font-size:clamp(30px,6vw,44px); color:var(--terracota); line-height:1.12; margin-bottom:14px}
-  .sub{font-size:18px; max-width:520px; margin:0 auto 22px}
-  .badges{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:18px 0 6px}
-  .badge{background:var(--blanco); border:1px solid #e4d5c0; border-radius:999px; padding:6px 14px; font-size:13px}
-  .cover{width:min(300px,70%); margin:24px auto 6px; display:block; border-radius:10px; box-shadow:0 18px 40px rgba(43,38,34,.25)}
+  /* ─── hero ─── */
+  .hero{position:relative;padding:150px 0 90px;text-align:center;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:-20% -10%;background:
+    radial-gradient(600px 420px at 50% -5%, rgba(255,122,69,.22), transparent 65%),
+    radial-gradient(500px 380px at 12% 45%, rgba(201,102,60,.13), transparent 60%),
+    radial-gradient(460px 360px at 88% 60%, rgba(143,162,107,.10), transparent 60%);
+    pointer-events:none}
+  .kicker{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--borde);background:var(--glass);border-radius:999px;padding:8px 18px;font-size:13px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--crema)}
+  .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--ember);box-shadow:0 0 10px var(--ember);animation:pulso 2.2s infinite}
+  @keyframes pulso{0%,100%{opacity:1}50%{opacity:.35}}
+  h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(42px,7.4vw,84px);line-height:1.02;margin:26px auto 20px;max-width:900px;letter-spacing:-1px}
+  h1 .fx{background:linear-gradient(100deg,var(--ember) 10%,#FFB347 50%,var(--ember) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{font-size:clamp(16px,2.4vw,20px);color:#CBBFAE;max-width:640px;margin:0 auto 34px}
+  .sub b{color:var(--crema)}
+  .cta{display:inline-block;background:linear-gradient(135deg,var(--ember),var(--terra));color:#fff;text-decoration:none;font-weight:800;font-size:19px;padding:19px 46px;border-radius:16px;box-shadow:0 12px 44px rgba(255,122,69,.4);transition:transform .18s, box-shadow .18s}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 18px 56px rgba(255,122,69,.5)}
+  .cta small{display:block;font-weight:500;font-size:12.5px;opacity:.85;margin-top:4px}
+  .cover-zone{position:relative;margin:64px auto 0;width:min(360px,78%)}
+  .cover-zone::after{content:"";position:absolute;inset:auto 8% -34px 8%;height:60px;background:radial-gradient(50% 100% at 50% 0,rgba(255,122,69,.45),transparent 75%);filter:blur(14px)}
+  .cover{width:100%;border-radius:16px;box-shadow:0 40px 90px rgba(0,0,0,.6), 0 0 0 1px var(--borde);animation:flotar 7s ease-in-out infinite}
+  @keyframes flotar{0%,100%{transform:translateY(0) rotate(-.6deg)}50%{transform:translateY(-12px) rotate(.6deg)}}
+  .badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:58px}
+  .badge{border:1px solid var(--borde);background:var(--glass);backdrop-filter:blur(8px);border-radius:999px;padding:9px 18px;font-size:13.5px;font-weight:600;color:var(--crema)}
 
-  .cta{display:inline-block; background:var(--terracota); color:#fff; text-decoration:none; font-size:19px; font-weight:bold; padding:16px 38px; border-radius:12px; margin-top:18px; box-shadow:0 8px 20px rgba(201,102,60,.35)}
-  .cta small{display:block; font-weight:normal; font-size:12.5px; opacity:.9; margin-top:3px}
-  .cta:active{transform:translateY(1px)}
+  /* ─── stats ─── */
+  .stats{border-top:1px solid var(--borde);border-bottom:1px solid var(--borde);background:rgba(255,253,249,.025)}
+  .stats-in{max-width:1060px;margin:0 auto;padding:30px 22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px;text-align:center}
+  .stat b{font-family:'Fraunces',serif;font-size:34px;color:var(--ember);display:block;line-height:1}
+  .stat span{font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;color:#A79A87}
 
-  section{padding:44px 0}
-  section.alt{background:var(--crema)}
-  h2{font-size:clamp(24px,4.6vw,32px); color:var(--terracota); text-align:center; margin-bottom:8px}
-  .lead{text-align:center; max-width:540px; margin:0 auto 28px; color:#5d554b}
+  section{padding:96px 0}
+  h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(30px,4.6vw,46px);line-height:1.08;text-align:center;margin-bottom:14px;letter-spacing:-.5px}
+  .lead{text-align:center;color:#B8AB99;max-width:560px;margin:0 auto 48px;font-size:17px}
 
-  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin-top:22px}
-  .card{background:var(--blanco); border:1px solid #eadfce; border-radius:12px; padding:18px}
-  .card h3{font-size:17px; margin-bottom:6px}
-  .card .n{color:var(--oliva); font-size:12px; letter-spacing:1.5px; text-transform:uppercase}
+  /* ─── problema ─── */
+  .prob{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:10px}
+  .prob .p{border:1px solid var(--borde);background:var(--glass);border-radius:20px;padding:26px;font-size:15.5px;color:#CBBFAE}
+  .prob .p b{display:block;color:var(--crema);font-size:17px;margin-bottom:8px}
+  .puente{margin:44px auto 0;max-width:720px;text-align:center;font-size:clamp(17px,2.6vw,21px);color:var(--crema)}
+  .puente em{color:var(--ember);font-style:normal;font-weight:700}
 
-  .check li{list-style:none; padding-left:30px; position:relative; margin:10px 0; font-size:16.5px}
-  .check li::before{content:"✔"; position:absolute; left:0; color:var(--oliva); font-weight:bold}
+  /* ─── secciones grid ─── */
+  .dark2{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 50%,var(--bg) 100%)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
+  .card{border:1px solid var(--borde);background:var(--glass);border-radius:20px;padding:24px 22px;transition:transform .2s,border-color .2s,background .2s}
+  .card:hover{transform:translateY(-4px);border-color:rgba(255,122,69,.5);background:rgba(255,122,69,.06)}
+  .card .emo{font-size:30px}
+  .card h3{font-size:17px;color:var(--crema);margin:12px 0 6px;font-weight:800}
+  .card p{font-size:13.8px;color:#A79A87}
 
-  .bonusbox{border:2px dashed var(--oliva); border-radius:14px; padding:22px; margin-top:20px; background:var(--blanco)}
-  .bonusbox h3{color:var(--oliva); text-transform:uppercase; letter-spacing:2px; font-size:14px; margin-bottom:12px; text-align:center}
-  .bono{display:flex; justify-content:space-between; gap:12px; padding:9px 0; border-bottom:1px solid #eee3d2; font-size:15.5px}
-  .bono:last-child{border-bottom:none}
-  .bono .val{color:#9a9184; white-space:nowrap}
+  /* ─── bonus ─── */
+  .bonusbox{border:1.5px dashed rgba(143,162,107,.55);border-radius:26px;padding:40px 34px;background:rgba(143,162,107,.05);max-width:720px;margin:0 auto}
+  .bonusbox h3{text-align:center;color:var(--oliva);letter-spacing:3px;font-size:13.5px;text-transform:uppercase;margin-bottom:22px}
+  .bono{display:flex;gap:14px;align-items:baseline;padding:13px 4px;border-bottom:1px solid rgba(245,233,218,.08);font-size:16px}
+  .bono:last-child{border:none}
+  .bono .ic{flex:none}
 
-  .precio{background:var(--carbon); color:var(--crema); text-align:center; border-radius:18px; padding:34px 22px; margin-top:10px}
-  .precio .tach{font-size:20px; text-decoration:line-through; opacity:.55}
-  .precio .actual{font-size:52px; color:#fff; font-weight:bold; line-height:1.1}
-  .precio .lanz{display:inline-block; background:var(--terracota); color:#fff; border-radius:999px; padding:5px 16px; font-size:13px; letter-spacing:1px; text-transform:uppercase; margin-bottom:14px}
-  .precio .cuotas{margin-top:8px; font-size:15px; opacity:.85}
-  .precio .cta{background:var(--terracota)}
+  /* ─── precio ─── */
+  .precio-card{position:relative;max-width:560px;margin:0 auto;border-radius:30px;padding:52px 36px;text-align:center;background:
+    radial-gradient(400px 260px at 50% -8%, rgba(255,122,69,.28), transparent 70%), var(--bg2);
+    border:1px solid rgba(255,122,69,.35);box-shadow:0 30px 90px rgba(0,0,0,.55)}
+  .lanz{display:inline-block;background:linear-gradient(135deg,var(--ember),var(--terra));color:#fff;border-radius:999px;padding:7px 20px;font-size:12.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+  .tach{margin-top:22px;color:#8d8171;font-size:22px;text-decoration:line-through}
+  .num{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(60px,10vw,86px);color:var(--hueso);line-height:1;margin:2px 0 4px}
+  .cuotas{color:#B8AB99;font-size:15px;margin-bottom:28px}
+  .garantia{display:flex;gap:16px;align-items:center;max-width:560px;margin:22px auto 0;border:1px solid var(--borde);background:var(--glass);border-radius:20px;padding:20px 24px;font-size:15px;color:#CBBFAE}
+  .garantia .s{font-size:34px;flex:none}
+  .garantia b{color:var(--crema)}
 
-  .garantia{display:flex; gap:18px; align-items:center; background:var(--blanco); border:1px solid #eadfce; border-radius:14px; padding:20px}
-  .garantia .sello{font-size:44px}
+  /* ─── faq ─── */
+  details{border:1px solid var(--borde);background:var(--glass);border-radius:16px;padding:20px 24px;margin:12px auto;max-width:720px}
+  summary{cursor:pointer;font-weight:700;font-size:16.5px;color:var(--crema);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:'Fraunces',serif;font-size:26px;color:var(--ember);transition:transform .2s;flex:none}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{margin-top:12px;color:#B8AB99;font-size:15px}
 
-  details{background:var(--blanco); border:1px solid #eadfce; border-radius:10px; padding:14px 18px; margin:10px 0}
-  summary{cursor:pointer; font-weight:bold; font-size:16px}
-  details p{margin-top:10px; color:#4c453c}
-
-  footer{background:var(--carbon); color:#b9ae9e; text-align:center; padding:28px 20px; font-size:13px}
+  footer{border-top:1px solid var(--borde);text-align:center;padding:40px 22px 110px;color:#8d8171;font-size:13.5px}
   footer a{color:var(--crema)}
+
+  /* barra mobile fija */
+  .mbar{position:fixed;bottom:0;left:0;right:0;z-index:80;display:none;padding:12px 16px calc(12px + env(safe-area-inset-bottom));backdrop-filter:blur(18px);background:rgba(20,16,13,.8);border-top:1px solid var(--borde)}
+  .mbar a{display:block;text-align:center;background:linear-gradient(135deg,var(--ember),var(--terra));color:#fff;text-decoration:none;font-weight:800;font-size:16.5px;padding:15px;border-radius:14px}
+  @media(max-width:760px){.mbar{display:block}}
+
+  /* reveals */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .rv.on{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .rv{opacity:1;transform:none}.cover{animation:none}.kicker .dot{animation:none}
+  }
+
+  /* modal */
+  #modal{display:none;position:fixed;inset:0;background:rgba(10,8,6,.8);backdrop-filter:blur(8px);z-index:100;align-items:center;justify-content:center;padding:20px}
+  .m-card{background:var(--bg2);border:1px solid var(--borde);border-radius:24px;max-width:430px;width:100%;padding:30px}
+  .m-card h3{font-family:'Fraunces',serif;font-size:24px;color:var(--hueso);margin-bottom:6px}
+  .m-card p{font-size:14px;color:#B8AB99;margin-bottom:18px}
+  .m-card input{width:100%;padding:14px 16px;background:rgba(255,253,249,.06);border:1px solid var(--borde);border-radius:12px;font-size:16px;color:var(--hueso);margin-bottom:12px;outline:none;font-family:'Inter',sans-serif}
+  .m-card input:focus{border-color:var(--ember)}
+  .m-card button{width:100%;border:none;cursor:pointer;font-family:'Inter',sans-serif}
+  #m-err{color:#ff8f6e;font-size:13px;margin-top:10px;display:none}
+  #m-cerrar{color:#8d8171;font-size:13px}
 </style>
 </head>
 <body>
 
-<div class="topbar sans">
-  <span class="marca">Cocina de Aire</span>
-  <a href="#comprar">Lo quiero</a>
-</div>
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="#">Cocina <em>de Aire</em></a>
+    <a class="nav-cta" href="#comprar" data-checkout>Lo quiero</a>
+  </div>
+</nav>
 
-<div class="hero">
+<header class="hero">
   <div class="wrap">
-    <div class="kicker sans">Recetario digital · 100% argentino</div>
-    <h1>+500 recetas argentinas para tu freidora de aire</h1>
-    <p class="sub">Milanesas que crujen de verdad, pan casero, postres con dulce de leche y la cena de todos los días — con <b>tiempos y temperaturas exactos</b> e ingredientes que conseguís en el chino de la esquina.</p>
-    <!-- PORTADA: reemplazar por la imagen real -->
-    <img class="cover" src="portada.jpg" alt="Portada del recetario +500 Recetas para Airfryer">
-    <div class="badges sans">
-      <span class="badge">📄 PDF · lo leés en el celu</span>
+    <span class="kicker"><span class="dot"></span> Recetario digital · 100% argentino</span>
+    <h1>Tu freidora de aire puede hacer <span class="fx">todo esto</span></h1>
+    <p class="sub">Milanesas que crujen de verdad, chipá, entraña, brownies — <b>+500 recetas argentinas</b> con tiempos y temperaturas exactos, e ingredientes que conseguís en el chino de la esquina.</p>
+    <a class="cta" href="#comprar" data-checkout>Quiero las +500 recetas<small>Pago único · MercadoPago hasta 3 cuotas</small></a>
+    <div class="cover-zone"><img class="cover" src="portada.jpg" alt="Recetario Cocina de Aire"></div>
+    <div class="badges">
+      <span class="badge">📄 PDF — lo leés en el celu</span>
       <span class="badge">⚡ Entrega inmediata</span>
       <span class="badge">💳 Pago único, sin suscripción</span>
       <span class="badge">🛡️ Garantía de 7 días</span>
     </div>
-    <a class="cta sans" href="#comprar">Quiero las +500 recetas<small>Pago único · MercadoPago hasta 3 cuotas</small></a>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stats-in">
+    <div class="stat rv"><b>503</b><span>recetas</span></div>
+    <div class="stat rv"><b>10</b><span>secciones</span></div>
+    <div class="stat rv"><b>5</b><span>bonus de regalo</span></div>
+    <div class="stat rv"><b>0</b><span>"cups" y fahrenheit</span></div>
   </div>
 </div>
 
 <section>
   <div class="wrap">
-    <h2>¿Te suena?</h2>
-    <p class="lead">Te compraste la freidora, hiciste papas fritas dos semanas seguidas… y ahí quedó.</p>
-    <ul class="check">
-      <li>Probás recetas de internet y salen a medias: tiempos en Fahrenheit, "cups", ingredientes que acá no existen.</li>
-      <li>Terminás cocinando siempre lo mismo porque no tenés ideas a mano.</li>
-      <li>Cada receta nueva es una apuesta: a veces sale, a veces va a la basura.</li>
-    </ul>
-    <p style="margin-top:22px; font-size:17px"><b>Este recetario resuelve eso de raíz:</b> +500 recetas pensadas para Argentina, probadas en airfryer, con temperatura y tiempo exactos en cada paso. Abrís, elegís, cocinás. Sin vueltas.</p>
+    <h2 class="rv">¿Te suena?</h2>
+    <p class="lead rv">Te compraste la freidora, hiciste papas fritas dos semanas seguidas… y ahí quedó.</p>
+    <div class="prob">
+      <div class="p rv"><b>Recetas de otro país</b>Tiempos en Fahrenheit, "cups", ingredientes que acá no existen. Salen a medias o van a la basura.</div>
+      <div class="p rv"><b>Siempre lo mismo</b>Sin ideas a mano, terminás en el triángulo papas-milanesas-hamburguesas.</div>
+      <div class="p rv"><b>Cada intento, una apuesta</b>Probás algo nuevo sin tiempos confiables y rezás. A veces sale. A veces no.</div>
+    </div>
+    <p class="puente rv">Este recetario lo resuelve de raíz: <em>+500 recetas pensadas para Argentina</em>, con temperatura y tiempo exactos en cada paso. Abrís, elegís, cocinás.</p>
   </div>
 </section>
 
-<section class="alt">
+<section class="dark2">
   <div class="wrap">
-    <h2>Qué hay adentro</h2>
-    <p class="lead">Organizado por secciones para que encuentres qué cocinar en 10 segundos.</p>
-    <div class="grid sans">
-      <div class="card"><div class="n">Sección</div><h3>🥩 Carnes y pollo</h3><p>Milanesas perfectas, entraña, ribs, alitas, supremas rellenas y los cortes de acá.</p></div>
-      <div class="card"><div class="n">Sección</div><h3>🍕 Panes, pizzas y masas</h3><p>Chipá, focaccia, empanadas al aire, prepizzas y pan casero sin prender el horno.</p></div>
-      <div class="card"><div class="n">Sección</div><h3>🐟 Pescados y mariscos</h3><p>Merluza crocante, salmón, rabas y langostinos en su punto justo.</p></div>
-      <div class="card"><div class="n">Sección</div><h3>🥦 Verduras y guarniciones</h3><p>Papas en todas sus formas, calabaza caramelizada, provoleta y verduras para la semana.</p></div>
-      <div class="card"><div class="n">Sección</div><h3>🌱 Veggie y legumbres</h3><p>Hamburguesas de lentejas, falafel, tofu crocante y milanesas veggie que no dan lástima.</p></div>
-      <div class="card"><div class="n">Sección</div><h3>🍰 Postres y dulces</h3><p>Brownies, alfajores de maicena, churros al aire y manzanas asadas.</p></div>
-      <div class="card"><div class="n">Sección</div><h3>⚡ Express en 15 minutos</h3><p>La cena de emergencia de los días que no da para nada.</p></div>
-      <div class="card"><div class="n">Sección</div><h3>🧒 Para chicos</h3><p>Nuggets caseros, papas sonrientes y verduras escondidas que comen sin pelear.</p></div>
-      <div class="card"><div class="n">Sección</div><h3>🥐 Desayunos y meriendas</h3><p>Budines, granola casera, tostados y facturas como recién compradas.</p></div>
-      <div class="card"><div class="n">Sección</div><h3>🍢 Snacks y picadas</h3><p>Chips, aros de cebolla, palitos de queso y la picada caliente completa.</p></div>
+    <h2 class="rv">Qué hay adentro</h2>
+    <p class="lead rv">Organizado por secciones para que encuentres qué cocinar en 10 segundos.</p>
+    <div class="grid">
+      <div class="card rv"><span class="emo">🥩</span><h3>Carnes y pollo</h3><p>Milanesas perfectas, entraña, ribs, alitas, supremas rellenas y los cortes de acá.</p></div>
+      <div class="card rv"><span class="emo">🍕</span><h3>Panes, pizzas y masas</h3><p>Chipá, focaccia, empanadas al aire y pan casero sin prender el horno.</p></div>
+      <div class="card rv"><span class="emo">🐟</span><h3>Pescados y mariscos</h3><p>Merluza crocante, salmón, rabas y langostinos en su punto justo.</p></div>
+      <div class="card rv"><span class="emo">🥦</span><h3>Verduras y guarniciones</h3><p>Papas en todas sus formas, calabaza caramelizada, provoleta.</p></div>
+      <div class="card rv"><span class="emo">🌱</span><h3>Veggie y legumbres</h3><p>Hamburguesas de lentejas, falafel, tofu crocante, milanesas veggie.</p></div>
+      <div class="card rv"><span class="emo">🍰</span><h3>Postres y dulces</h3><p>Brownies, alfajores, churros al aire y manzanas asadas.</p></div>
+      <div class="card rv"><span class="emo">⚡</span><h3>Express en 15 min</h3><p>La cena de emergencia de los días que no da para nada.</p></div>
+      <div class="card rv"><span class="emo">🧒</span><h3>Para chicos</h3><p>Nuggets caseros, papas sonrientes y verduras escondidas.</p></div>
+      <div class="card rv"><span class="emo">🥐</span><h3>Desayunos y meriendas</h3><p>Budines, granola casera, tostados y facturas como nuevas.</p></div>
+      <div class="card rv"><span class="emo">🍢</span><h3>Snacks y picadas</h3><p>Chips, aros de cebolla, palitos de queso y la picada caliente completa.</p></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Y además, de regalo</h2>
-    <div class="bonusbox sans">
-      <h3>Bonus incluidos con tu compra</h3>
-      <div class="bono"><span>📊 Guía de tiempos y temperaturas por alimento (tabla para imprimir)</span></div>
-      <div class="bono"><span>🥣 20 salsas y aderezos para acompañar todo</span></div>
-      <div class="bono"><span>🗓️ Menú semanal armado + lista de compras</span></div>
-      <div class="bono"><span>🧽 Limpieza y cuidado de tu freidora sin drama</span></div>
-      <div class="bono"><span>⚠️ Los 12 errores que arruinan tus recetas (y cómo evitarlos)</span></div>
+    <h2 class="rv">Y además, de regalo</h2>
+    <p class="lead rv">Cinco bonus incluidos con tu compra. Sin costo extra.</p>
+    <div class="bonusbox rv">
+      <h3>Bonus incluidos</h3>
+      <div class="bono"><span class="ic">📊</span><span>Guía de tiempos y temperaturas por alimento — la chuleta para imprimir</span></div>
+      <div class="bono"><span class="ic">🥣</span><span>20 salsas y aderezos para acompañar todo</span></div>
+      <div class="bono"><span class="ic">🗓️</span><span>Menú semanal armado + lista de compras</span></div>
+      <div class="bono"><span class="ic">🧽</span><span>Limpieza y cuidado de tu freidora sin drama</span></div>
+      <div class="bono"><span class="ic">⚠️</span><span>Los 12 errores que arruinan tus recetas (y cómo evitarlos)</span></div>
     </div>
   </div>
 </section>
 
-<section class="alt" id="comprar">
+<section class="dark2" id="comprar">
   <div class="wrap">
-    <div class="precio sans">
+    <div class="precio-card rv">
       <span class="lanz">Precio de lanzamiento</span>
       <div class="tach">$29.980</div>
-      <div class="actual">$14.990</div>
-      <div class="cuotas">MercadoPago · hasta 3 cuotas sin interés · pago único, sin suscripción</div>
-      <a class="cta" href="#" data-checkout>Descargar ahora<small>Acceso inmediato y para siempre</small></a>
+      <div class="num">$14.990</div>
+      <div class="cuotas">MercadoPago · hasta 3 cuotas sin interés<br>Pago único — es tuyo para siempre</div>
+      <a class="cta" href="#" data-checkout>Descargar ahora<small>Acceso inmediato</small></a>
     </div>
-    <div style="height:16px"></div>
-    <div class="garantia">
-      <div class="sello">🛡️</div>
-      <div><b>Garantía sin vueltas:</b> tenés 7 días para probarlo. Si no te sirve, escribinos y te devolvemos el 100% de la plata. Sin preguntas, sin formularios eternos.</div>
+    <div class="garantia rv">
+      <span class="s">🛡️</span>
+      <span><b>Garantía sin vueltas:</b> tenés 7 días para probarlo. Si no te sirve, escribinos y te devolvemos el 100% de la plata. Sin preguntas.</span>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIOS: sección lista pero VACÍA a propósito. Se llena únicamente con
-     reseñas reales de compradores (capturas de WhatsApp con permiso). No inventar. -->
+<!-- TESTIMONIOS: sección reservada — solo reseñas reales de compradores. No inventar. -->
 
 <section>
   <div class="wrap">
-    <h2>Preguntas frecuentes</h2>
-    <details><summary>¿Cómo lo recibo?</summary><p>Apenas se acredita el pago te llega un mail (y un WhatsApp si lo pedís) con el link de descarga del PDF. Lo podés leer en el celular, la tablet o imprimirlo.</p></details>
-    <details><summary>¿Sirve para mi freidora?</summary><p>Sí. Las recetas funcionan en cualquier marca y tamaño de freidora de aire. Si la tuya es chica, cada receta te dice cómo cocinar en tandas.</p></details>
-    <details><summary>¿Es una suscripción?</summary><p>No. Es un pago único y el recetario queda tuyo para siempre, con todas las actualizaciones de esta edición.</p></details>
-    <details><summary>¿Las recetas usan ingredientes raros?</summary><p>No. Todo se consigue en cualquier supermercado o verdulería de Argentina, con cantidades en gramos y cucharadas — nada de "cups" ni ingredientes importados.</p></details>
-    <details><summary>¿Y si no me gusta?</summary><p>Tenés 7 días de garantía total. Nos escribís y te devolvemos la plata, listo.</p></details>
+    <h2 class="rv">Preguntas frecuentes</h2>
+    <div style="margin-top:36px">
+      <details class="rv"><summary>¿Cómo lo recibo?</summary><p>Apenas se acredita el pago, la página te muestra el botón de descarga y además te llega el link por mail. Lo leés en el celular, tablet o lo imprimís.</p></details>
+      <details class="rv"><summary>¿Sirve para mi freidora?</summary><p>Sí. Las recetas funcionan en cualquier marca y tamaño. Si la tuya es chica, cada receta te dice cómo cocinar en tandas.</p></details>
+      <details class="rv"><summary>¿Es una suscripción?</summary><p>No. Pago único. El recetario queda tuyo para siempre.</p></details>
+      <details class="rv"><summary>¿Usa ingredientes raros?</summary><p>No. Todo se consigue en cualquier supermercado o verdulería de Argentina, en gramos y cucharadas. Cero "cups".</p></details>
+      <details class="rv"><summary>¿Y si no me gusta?</summary><p>Garantía total de 7 días: nos escribís y te devolvemos la plata. Listo.</p></details>
+    </div>
   </div>
 </section>
 
-<footer class="sans">
-  <p><b>Cocina de Aire</b> · Recetarios digitales argentinos</p>
-  <p style="margin-top:6px">Consultas: <a href="mailto:hola@cocinadeaire.org">hola@cocinadeaire.org</a></p>
+<footer>
+  <div class="logo" style="font-family:'Fraunces',serif;font-weight:900;font-size:22px;color:var(--crema);margin-bottom:10px">Cocina <em style="color:var(--ember);font-style:normal">de Aire</em></div>
+  <p>Recetarios digitales argentinos · <a href="mailto:hola@cocinadeaire.org">hola@cocinadeaire.org</a></p>
+  <p style="margin-top:6px">© 2026 Cocina de Aire</p>
 </footer>
 
-<!-- modal de checkout: pide el mail, crea la preferencia MP y redirige -->
-<div id="modal" style="display:none; position:fixed; inset:0; background:rgba(43,38,34,.72); z-index:100; align-items:center; justify-content:center; padding:20px">
-  <div class="sans" style="background:#FFFDF9; border-radius:16px; max-width:420px; width:100%; padding:26px">
-    <h3 style="font-size:20px; color:var(--terracota); margin-bottom:6px">¿A dónde te lo mandamos?</h3>
-    <p style="font-size:14px; color:#5d554b; margin-bottom:16px">Apenas pagues te llega el link de descarga a tu mail (y a tu WhatsApp si querés).</p>
-    <input id="m-email" type="email" placeholder="Tu mail" required style="width:100%; padding:12px; border:1px solid #d9cbb5; border-radius:8px; font-size:16px; margin-bottom:10px">
-    <input id="m-wpp" type="tel" placeholder="WhatsApp (opcional, ej 5491122334455)" style="width:100%; padding:12px; border:1px solid #d9cbb5; border-radius:8px; font-size:16px; margin-bottom:14px">
-    <button id="m-ir" class="cta" style="width:100%; border:none; cursor:pointer; font-size:17px">Ir a pagar con MercadoPago</button>
-    <p id="m-err" style="color:#b33; font-size:13px; margin-top:8px; display:none"></p>
-    <p style="text-align:center; margin-top:10px"><a href="#" id="m-cerrar" style="color:#9a9184; font-size:13px">cancelar</a></p>
+<div class="mbar"><a href="#comprar" data-checkout>Quiero las +500 recetas — $14.990</a></div>
+
+<div id="modal">
+  <div class="m-card">
+    <h3>¿A dónde te lo mandamos?</h3>
+    <p>Apenas pagues, la página te da la descarga y te mandamos el link a tu mail (y a tu WhatsApp si querés).</p>
+    <input id="m-email" type="email" placeholder="Tu mail" required>
+    <input id="m-wpp" type="tel" placeholder="WhatsApp (opcional, ej 5491122334455)">
+    <button id="m-ir" class="cta" style="font-size:17px">Ir a pagar con MercadoPago</button>
+    <p id="m-err"></p>
+    <p style="text-align:center;margin-top:14px"><a href="#" id="m-cerrar">cancelar</a></p>
   </div>
 </div>
+
 <script>
   const API_URL = "https://veriko-api-production.up.railway.app/recetario";
   const modal = document.getElementById("modal");
@@ -198,10 +275,9 @@
   document.getElementById("m-ir").addEventListener("click", async () => {
     const email = document.getElementById("m-email").value.trim();
     const err = document.getElementById("m-err");
-    if (!email.includes("@")) { err.textContent = "Poné un mail válido, es a donde te mandamos el recetario."; err.style.display = "block"; return; }
-    if (!API_URL) { err.textContent = "El pago todavía no está activo — probá en un rato."; err.style.display = "block"; return; }
+    if (!email.includes("@")) { err.textContent = "Poné un mail válido — es a donde te mandamos el recetario."; err.style.display = "block"; return; }
     err.style.display = "none";
-    document.getElementById("m-ir").textContent = "Un segundo…";
+    const btn = document.getElementById("m-ir"); btn.textContent = "Un segundo…";
     try {
       const r = await fetch(API_URL + "/checkout", { method: "POST", headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ email, whatsapp: document.getElementById("m-wpp").value.trim() }) });
@@ -210,9 +286,12 @@
       throw new Error("sin init_point");
     } catch (e) {
       err.textContent = "No pudimos iniciar el pago. Probá de nuevo o escribinos."; err.style.display = "block";
-      document.getElementById("m-ir").textContent = "Ir a pagar con MercadoPago";
+      btn.textContent = "Ir a pagar con MercadoPago";
     }
   });
+
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } }), {threshold:.12});
+  document.querySelectorAll(".rv").forEach(el => io.observe(el));
 </script>
 </body>
 </html>
