@@ -1,330 +1,218 @@
-<!doctype html>
-<html lang="es-AR">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cocina de Aire — +500 Recetas Argentinas para tu Airfryer</title>
-<meta name="description" content="El recetario argentino más completo para freidora de aire: +500 recetas con tiempos y temperaturas exactos. Pago único, entrega inmediata.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
-<!-- META PIXEL: pegar acá el snippet cuando exista la cuenta publicitaria -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estudio Jurídico — Amparos de Salud, Sucesiones, Divorcios, Civil y Contratos</title>
+<meta name="description" content="Estudio jurídico especializado en amparos de salud, sucesiones, divorcios, derecho civil y contratos privados. Asesoramiento claro y personalizado.">
+<meta name="robots" content="noindex">
+<!-- DEMO — datos a reemplazar: NOMBRE_ESTUDIO, TELÉFONO (549...), EMAIL -->
 <style>
   :root{
-    --bg:#FFFDF9; --bg2:#F5E9DA; --panel:#221B15; --carbon:#2B2622; --tinta:#2B2622;
-    --ember:#FF7A45; --terra:#C9663C; --terra2:#A94F2C;
-    --crema:#F5E9DA; --hueso:#FFFDF9; --oliva:#6B7A4F;
-    --card:#FFFFFF; --borde:rgba(43,38,34,.12); --suave:#6E6252;
+    --azul:#1e4e79;
+    --azul-claro:#eaf1f7;
+    --tinta:#1c2530;
+    --gris:#5c6a78;
+    --borde:#e3e8ee;
+    --blanco:#ffffff;
   }
-  *{box-sizing:border-box;margin:0;padding:0}
+  *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--tinta);line-height:1.6;overflow-x:hidden}
-  .wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+  body{font-family:'Georgia',serif;color:var(--tinta);background:var(--blanco);line-height:1.6}
+  .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 
-  /* ─── nav ─── */
-  nav{position:fixed;top:0;left:0;right:0;z-index:90;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:rgba(255,253,249,.78);border-bottom:1px solid var(--borde)}
-  .nav-in{max-width:1060px;margin:0 auto;padding:14px 22px;display:flex;justify-content:space-between;align-items:center}
-  .logo{font-family:'Fraunces',serif;font-weight:900;font-size:19px;color:var(--carbon);text-decoration:none;letter-spacing:.4px}
-  .logo em{color:var(--terra);font-style:normal}
-  .nav-cta{background:linear-gradient(135deg,var(--ember),var(--terra));color:#fff;text-decoration:none;font-weight:800;font-size:14px;padding:10px 22px;border-radius:999px;box-shadow:0 4px 18px rgba(201,102,60,.3);transition:transform .15s}
-  .nav-cta:hover{transform:translateY(-1px)}
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--borde)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{font-size:1.15rem;letter-spacing:.02em}
+  .logo b{color:var(--azul)}
+  nav.links{display:flex;gap:28px;font-size:.92rem}
+  nav.links a{color:var(--gris)}
+  nav.links a:hover{color:var(--azul)}
+  .btn{display:inline-block;background:var(--azul);color:#fff;padding:10px 22px;border-radius:6px;font-size:.92rem;font-weight:600;transition:opacity .15s}
+  .btn:hover{opacity:.88}
+  .btn.grande{padding:14px 32px;font-size:1rem}
+  .btn.linea{background:transparent;color:var(--azul);border:1.5px solid var(--azul)}
 
-  /* ─── hero ─── */
-  .hero{position:relative;padding:150px 0 90px;text-align:center;overflow:hidden}
-  .hero::before{content:"";position:absolute;inset:-20% -10%;background:
-    radial-gradient(620px 440px at 50% -5%, rgba(255,122,69,.14), transparent 65%),
-    radial-gradient(500px 380px at 10% 45%, rgba(201,102,60,.08), transparent 60%),
-    radial-gradient(460px 360px at 90% 60%, rgba(143,162,107,.09), transparent 60%);
-    pointer-events:none}
-  .kicker{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--borde);background:#fff;border-radius:999px;padding:8px 18px;font-size:13px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--carbon);box-shadow:0 2px 10px rgba(43,38,34,.05)}
-  .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--ember);box-shadow:0 0 10px var(--ember);animation:pulso 2.2s infinite}
-  @keyframes pulso{0%,100%{opacity:1}50%{opacity:.35}}
-  h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(42px,7.4vw,84px);line-height:1.02;margin:26px auto 20px;max-width:900px;letter-spacing:-1px;color:var(--carbon)}
-  h1 .fx{color:var(--terra);font-style:italic}
-  .sub{font-size:clamp(16px,2.4vw,20px);color:var(--suave);max-width:640px;margin:0 auto 34px}
-  .sub b{color:var(--carbon)}
-  .cta{display:inline-block;background:linear-gradient(135deg,var(--ember),var(--terra));color:#fff;text-decoration:none;font-weight:800;font-size:19px;padding:19px 46px;border-radius:16px;box-shadow:0 12px 36px rgba(201,102,60,.35);transition:transform .18s, box-shadow .18s}
-  .cta:hover{transform:translateY(-2px);box-shadow:0 16px 46px rgba(201,102,60,.45)}
-  .cta small{display:block;font-weight:500;font-size:12.5px;opacity:.9;margin-top:4px}
-  .cover-zone{position:relative;margin:64px auto 0;width:min(360px,78%)}
-  .cover-zone::after{content:"";position:absolute;inset:auto 8% -30px 8%;height:54px;background:radial-gradient(50% 100% at 50% 0,rgba(201,102,60,.35),transparent 75%);filter:blur(14px)}
-  .cover{width:100%;border-radius:16px;box-shadow:0 34px 70px rgba(43,38,34,.3), 0 0 0 1px var(--borde);animation:flotar 7s ease-in-out infinite}
-  @keyframes flotar{0%,100%{transform:translateY(0) rotate(-.6deg)}50%{transform:translateY(-12px) rotate(.6deg)}}
-  .badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:58px}
-  .badge{border:1px solid var(--borde);background:#fff;border-radius:999px;padding:9px 18px;font-size:13.5px;font-weight:600;color:var(--carbon);box-shadow:0 2px 8px rgba(43,38,34,.04)}
+  /* hero */
+  .hero{padding:96px 0 88px;text-align:center;background:linear-gradient(180deg,#fff 0%,var(--azul-claro) 100%)}
+  .hero h1{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:600;max-width:760px;margin:0 auto 18px;line-height:1.25}
+  .hero p{font-size:1.1rem;color:var(--gris);max-width:560px;margin:0 auto 34px}
+  .hero .acciones{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
-  /* ─── stats ─── */
-  .stats{border-top:1px solid var(--borde);border-bottom:1px solid var(--borde);background:rgba(43,38,34,.025)}
-  .stats-in{max-width:1060px;margin:0 auto;padding:30px 22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px;text-align:center}
-  .stat b{font-family:'Fraunces',serif;font-size:34px;color:var(--terra);display:block;line-height:1}
-  .stat span{font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;color:#8d8171}
+  /* secciones */
+  section{padding:76px 0}
+  .titulo{text-align:center;margin-bottom:12px;font-size:1.75rem;font-weight:600}
+  .baja{text-align:center;color:var(--gris);max-width:540px;margin:0 auto 48px}
+  .kicker{display:block;text-align:center;color:var(--azul);font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
 
-  section{padding:96px 0}
-  h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(30px,4.6vw,46px);line-height:1.08;text-align:center;margin-bottom:14px;letter-spacing:-.5px;color:var(--carbon)}
-  .lead{text-align:center;color:var(--suave);max-width:560px;margin:0 auto 48px;font-size:17px}
+  /* áreas */
+  #areas{background:#fff}
+  .grid-areas{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+  details.area{border:1px solid var(--borde);border-radius:10px;background:#fff;transition:box-shadow .15s;overflow:hidden}
+  details.area:hover{box-shadow:0 4px 18px rgba(30,78,121,.08)}
+  details.area summary{list-style:none;cursor:pointer;padding:22px 24px;display:flex;align-items:center;gap:14px;font-weight:600;font-size:1.05rem}
+  details.area summary::-webkit-details-marker{display:none}
+  details.area summary .ico{flex:none;width:42px;height:42px;border-radius:8px;background:var(--azul-claro);color:var(--azul);display:flex;align-items:center;justify-content:center;font-size:1.15rem}
+  details.area summary .flecha{margin-left:auto;color:var(--azul);transition:transform .2s;font-size:.85rem}
+  details.area[open] summary .flecha{transform:rotate(180deg)}
+  details.area .desc{padding:0 24px 22px 80px;color:var(--gris);font-size:.95rem}
+  details.area[open]{border-color:var(--azul)}
 
-  /* ─── problema ─── */
-  .prob{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:10px}
-  .prob .p{border:1px solid var(--borde);background:var(--card);border-radius:20px;padding:26px;font-size:15.5px;color:var(--suave);box-shadow:0 4px 16px rgba(43,38,34,.05)}
-  .prob .p b{display:block;color:var(--carbon);font-size:17px;margin-bottom:8px}
-  .puente{margin:44px auto 0;max-width:720px;text-align:center;font-size:clamp(17px,2.6vw,21px);color:var(--carbon)}
-  .puente em{color:var(--terra);font-style:normal;font-weight:700}
+  /* por qué */
+  #porque{background:var(--azul-claro)}
+  .grid-porque{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+  .card-p{background:#fff;border:1px solid var(--borde);border-radius:10px;padding:26px}
+  .card-p h3{font-size:1.02rem;margin-bottom:8px;color:var(--azul)}
+  .card-p p{color:var(--gris);font-size:.93rem}
 
-  /* ─── secciones grid ─── */
-  .alt{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 50%,var(--bg) 100%)}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
-  .card{border:1px solid var(--borde);background:var(--card);border-radius:20px;padding:24px 22px;transition:transform .2s,border-color .2s,background .2s;box-shadow:0 4px 14px rgba(43,38,34,.05)}
-  .card:hover{transform:translateY(-4px);border-color:rgba(201,102,60,.55);background:#FFF6EF}
-  .card .emo{font-size:30px}
-  .card h3{font-size:17px;color:var(--carbon);margin:12px 0 6px;font-weight:800}
-  .card p{font-size:13.8px;color:#8a7d6c}
+  /* quiénes somos */
+  #quienes .cols{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  #quienes p{color:var(--gris);margin-bottom:14px}
+  #quienes .marco{background:var(--azul-claro);border-radius:12px;padding:42px;text-align:center}
+  #quienes .marco .cifra{font-size:2.4rem;color:var(--azul);font-weight:700}
+  #quienes .marco .leyenda{color:var(--gris);font-size:.9rem}
+  #quienes .marco hr{border:none;border-top:1px solid #d3dfea;margin:22px 0}
 
-  /* ─── bonus ─── */
-  .bonusbox{border:1.5px dashed rgba(107,122,79,.6);border-radius:26px;padding:40px 34px;background:rgba(107,122,79,.06);max-width:720px;margin:0 auto}
-  .bonusbox h3{text-align:center;color:var(--oliva);letter-spacing:3px;font-size:13.5px;text-transform:uppercase;margin-bottom:22px}
-  .bono{display:flex;gap:14px;align-items:baseline;padding:13px 4px;border-bottom:1px solid rgba(43,38,34,.08);font-size:16px;color:var(--carbon)}
-  .bono:last-child{border:none}
-  .bono .ic{flex:none}
+  /* contacto */
+  #contacto{background:var(--azul);color:#fff;text-align:center}
+  #contacto .titulo{color:#fff}
+  #contacto .baja{color:#c9d9e8}
+  #contacto .btn{background:#fff;color:var(--azul)}
+  #contacto .datos{margin-top:30px;color:#c9d9e8;font-size:.95rem;line-height:2}
+  #contacto .datos a{text-decoration:underline}
 
-  /* ─── precio (tarjeta oscura de contraste) ─── */
-  .precio-card{position:relative;max-width:560px;margin:0 auto;border-radius:30px;padding:52px 36px;text-align:center;background:
-    radial-gradient(400px 260px at 50% -8%, rgba(255,122,69,.3), transparent 70%), var(--panel);
-    border:1px solid rgba(255,122,69,.35);box-shadow:0 30px 70px rgba(43,38,34,.35)}
-  .lanz{display:inline-block;background:linear-gradient(135deg,var(--ember),var(--terra));color:#fff;border-radius:999px;padding:7px 20px;font-size:12.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
-  .tach{margin-top:22px;color:#9c8f7d;font-size:22px;text-decoration:line-through}
-  .num{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(60px,10vw,86px);color:var(--hueso);line-height:1;margin:2px 0 4px}
-  .cuotas{color:#CBBFAE;font-size:15px;margin-bottom:28px}
+  footer{padding:26px 0;text-align:center;color:var(--gris);font-size:.85rem;background:#fff;border-top:1px solid var(--borde)}
 
-  /* ─── faq ─── */
-  details{border:1px solid var(--borde);background:var(--card);border-radius:16px;padding:20px 24px;margin:12px auto;max-width:720px;box-shadow:0 3px 10px rgba(43,38,34,.04)}
-  summary{cursor:pointer;font-weight:700;font-size:16.5px;color:var(--carbon);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
-  summary::-webkit-details-marker{display:none}
-  summary::after{content:"+";font-family:'Fraunces',serif;font-size:26px;color:var(--terra);transition:transform .2s;flex:none}
-  details[open] summary::after{transform:rotate(45deg)}
-  details p{margin-top:12px;color:var(--suave);font-size:15px}
+  /* whatsapp flotante */
+  .wa-flotante{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.22)}
+  .wa-flotante svg{width:30px;height:30px;fill:#fff}
 
-  footer{border-top:1px solid var(--borde);text-align:center;padding:40px 22px 110px;color:#8d8171;font-size:13.5px;background:var(--bg2)}
-  footer a{color:var(--carbon)}
-
-  /* barra mobile fija */
-  .mbar{position:fixed;bottom:0;left:0;right:0;z-index:80;display:none;padding:12px 16px calc(12px + env(safe-area-inset-bottom));backdrop-filter:blur(18px);background:rgba(255,253,249,.85);border-top:1px solid var(--borde)}
-  .mbar a{display:block;text-align:center;background:linear-gradient(135deg,var(--ember),var(--terra));color:#fff;text-decoration:none;font-weight:800;font-size:16.5px;padding:15px;border-radius:14px;box-shadow:0 6px 20px rgba(201,102,60,.35)}
-  @media(max-width:760px){.mbar{display:block}}
-
-
-  /* banda de fotos reales */
-  .fotos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:8px}
-  .fotos figure{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3}
-  .fotos img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
-  .fotos figure:hover img{transform:scale(1.05)}
-  .fotos figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 14px 10px;font-size:13px;font-weight:800;color:#fff;background:linear-gradient(transparent,rgba(20,14,10,.75));letter-spacing:.5px}
-  @media(max-width:700px){.fotos{grid-template-columns:repeat(2,1fr)}}
-
-  /* muestra del interior */
-  .muestra{display:flex;gap:18px;justify-content:center;align-items:flex-start;overflow-x:auto;padding:10px 4px 22px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
-  .muestra img{width:min(300px,72vw);flex:none;border-radius:14px;box-shadow:0 18px 44px rgba(43,38,34,.22);border:1px solid var(--borde);scroll-snap-align:center}
-  .muestra img:nth-child(2){transform:translateY(16px)}
-  .nota-muestra{text-align:center;color:#8d8171;font-size:13.5px;margin-top:6px}
-
-  /* reveals */
-  .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
-  .rv.on{opacity:1;transform:none}
-  @media (prefers-reduced-motion: reduce){
-    .rv{opacity:1;transform:none}.cover{animation:none}.kicker .dot{animation:none}
+  @media(max-width:760px){
+    nav.links{display:none}
+    #quienes .cols{grid-template-columns:1fr}
+    details.area .desc{padding-left:24px}
   }
-
-  /* modal */
-  #modal{display:none;position:fixed;inset:0;background:rgba(43,38,34,.5);backdrop-filter:blur(8px);z-index:100;align-items:center;justify-content:center;padding:20px}
-  .m-card{background:var(--bg);border:1px solid var(--borde);border-radius:24px;max-width:430px;width:100%;padding:30px;box-shadow:0 30px 70px rgba(43,38,34,.3)}
-  .m-card h3{font-family:'Fraunces',serif;font-size:24px;color:var(--carbon);margin-bottom:6px}
-  .m-card p{font-size:14px;color:var(--suave);margin-bottom:18px}
-  .m-card input{width:100%;padding:14px 16px;background:#fff;border:1px solid rgba(43,38,34,.18);border-radius:12px;font-size:16px;color:var(--carbon);margin-bottom:12px;outline:none;font-family:'Inter',sans-serif}
-  .m-card input:focus{border-color:var(--terra)}
-  .m-card button{width:100%;border:none;cursor:pointer;font-family:'Inter',sans-serif}
-  #m-err{color:#C0442B;font-size:13px;margin-top:10px;display:none}
-  #m-cerrar{color:#8d8171;font-size:13px}
 </style>
 </head>
-<body>
+<body class="sans">
 
-<nav>
-  <div class="nav-in">
-    <a class="logo" href="#">Cocina <em>de Aire</em></a>
-    <a class="nav-cta" href="#comprar" data-checkout>Lo quiero</a>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="wrap">
-    <span class="kicker"><span class="dot"></span> Recetario digital · 100% argentino</span>
-    <h1>Tu freidora de aire puede hacer <span class="fx">todo esto</span></h1>
-    <p class="sub">Milanesas que crujen de verdad, chipá, entraña, brownies — <b>+500 recetas argentinas</b> con tiempos y temperaturas exactos, e ingredientes que conseguís en el chino de la esquina.</p>
-    <a class="cta" href="#comprar" data-checkout>Quiero las +500 recetas<small>Pago único · MercadoPago hasta 3 cuotas</small></a>
-    <div class="cover-zone"><img class="cover" src="portada.jpg" alt="Recetario Cocina de Aire"></div>
-    <div class="badges">
-      <span class="badge">PDF — lo leés en el celu</span>
-      <span class="badge">Entrega inmediata</span>
-      <span class="badge">Pago único, sin suscripción</span>
-    </div>
+<header>
+  <div class="wrap nav">
+    <div class="logo"><b>NOMBRE_ESTUDIO</b> · Abogados</div>
+    <nav class="links">
+      <a href="#areas">Áreas de práctica</a>
+      <a href="#porque">Por qué elegirnos</a>
+      <a href="#quienes">Quiénes somos</a>
+    </nav>
+    <a class="btn" href="#contacto">Contactanos</a>
   </div>
 </header>
 
-<div class="stats">
-  <div class="stats-in">
-    <div class="stat rv"><b>503</b><span>recetas</span></div>
-    <div class="stat rv"><b>10</b><span>secciones</span></div>
-    <div class="stat rv"><b>5</b><span>bonus de regalo</span></div>
-    <div class="stat rv"><b>0</b><span>"cups" y fahrenheit</span></div>
-  </div>
-</div>
-
-
-<section style="padding:72px 0 60px">
+<section class="hero">
   <div class="wrap">
-    <h2 class="rv">Comida de verdad, de acá</h2>
-    <p class="lead rv">Nada de recetas de laboratorio: los platos que ya comés, resueltos en la freidora.</p>
-    <div class="fotos rv">
-      <figure><img src="img/carnes.jpg" alt="Carnes a la airfryer" loading="lazy"><figcaption>Carnes y pollo</figcaption></figure>
-      <figure><img src="img/verduras.jpg" alt="Verduras y guarniciones" loading="lazy"><figcaption>Verduras y snacks</figcaption></figure>
-      <figure><img src="img/pescados.jpg" alt="Pescados y tartas" loading="lazy"><figcaption>Pescados y tartas</figcaption></figure>
-      <figure><img src="img/postres.jpg" alt="Postres y dulces" loading="lazy"><figcaption>Postres y dulces</figcaption></figure>
+    <h1>Asesoramiento jurídico claro, personalizado y confidencial</h1>
+    <p>Amparos de salud, sucesiones, divorcios, derecho civil y contratos privados. Le explicamos su situación sin vueltas y defendemos sus derechos.</p>
+    <div class="acciones">
+      <a class="btn grande" href="#contacto">Solicitar consulta</a>
+      <a class="btn grande linea" href="https://wa.me/5491100000000" target="_blank" rel="noopener">Escribir por WhatsApp</a>
     </div>
   </div>
 </section>
 
-<section>
+<section id="areas">
   <div class="wrap">
-    <h2 class="rv">¿Te suena?</h2>
-    <p class="lead rv">Te compraste la freidora, hiciste papas fritas dos semanas seguidas… y ahí quedó.</p>
-    <div class="prob">
-      <div class="p rv"><b>Recetas de otro país</b>Tiempos en Fahrenheit, "cups", ingredientes que acá no existen. Salen a medias o van a la basura.</div>
-      <div class="p rv"><b>Siempre lo mismo</b>Sin ideas a mano, terminás en el triángulo papas-milanesas-hamburguesas.</div>
-      <div class="p rv"><b>Cada intento, una apuesta</b>Probás algo nuevo sin tiempos confiables y rezás. A veces sale. A veces no.</div>
-    </div>
-    <p class="puente rv">Este recetario lo resuelve de raíz: <em>+500 recetas pensadas para Argentina</em>, con temperatura y tiempo exactos en cada paso. Abrís, elegís, cocinás.</p>
-  </div>
-</section>
+    <span class="kicker">Especializaciones</span>
+    <h2 class="titulo">Áreas de práctica</h2>
+    <p class="baja">Hacé clic en cada área para ver en qué podemos ayudarte.</p>
+    <div class="grid-areas">
 
-<section class="alt">
-  <div class="wrap">
-    <h2 class="rv">Qué hay adentro</h2>
-    <p class="lead rv">Organizado por secciones para que encuentres qué cocinar en 10 segundos.</p>
-    <div class="grid">
-      <div class="card rv"><span class="emo">🥩</span><h3>Carnes y pollo</h3><p>Milanesas perfectas, entraña, ribs, alitas, supremas rellenas y los cortes de acá.</p></div>
-      <div class="card rv"><span class="emo">🍕</span><h3>Panes, pizzas y masas</h3><p>Chipá, focaccia, empanadas al aire y pan casero sin prender el horno.</p></div>
-      <div class="card rv"><span class="emo">🐟</span><h3>Pescados y mariscos</h3><p>Merluza crocante, salmón, rabas y langostinos en su punto justo.</p></div>
-      <div class="card rv"><span class="emo">🥦</span><h3>Verduras y guarniciones</h3><p>Papas en todas sus formas, calabaza caramelizada, provoleta.</p></div>
-      <div class="card rv"><span class="emo">🌱</span><h3>Veggie y legumbres</h3><p>Hamburguesas de lentejas, falafel, tofu crocante, milanesas veggie.</p></div>
-      <div class="card rv"><span class="emo">🍰</span><h3>Postres y dulces</h3><p>Brownies, alfajores, churros al aire y manzanas asadas.</p></div>
-      <div class="card rv"><span class="emo">⚡</span><h3>Express en 15 min</h3><p>La cena de emergencia de los días que no da para nada.</p></div>
-      <div class="card rv"><span class="emo">🧒</span><h3>Para chicos</h3><p>Nuggets caseros, papas sonrientes y verduras escondidas.</p></div>
-      <div class="card rv"><span class="emo">🥐</span><h3>Desayunos y meriendas</h3><p>Budines, granola casera, tostados y facturas como nuevas.</p></div>
-      <div class="card rv"><span class="emo">🍢</span><h3>Snacks y picadas</h3><p>Chips, aros de cebolla, palitos de queso y la picada caliente completa.</p></div>
-    </div>
-  </div>
-</section>
+      <details class="area">
+        <summary><span class="ico">⚕</span> Amparos de Salud <span class="flecha">▼</span></summary>
+        <div class="desc">Acciones de amparo contra obras sociales y prepagas: cobertura de medicamentos y tratamientos, prestaciones por discapacidad, internaciones y negativas de afiliación. Actuación urgente cuando la salud no puede esperar.</div>
+      </details>
 
-<section>
-  <div class="wrap">
-    <h2 class="rv">Y además, de regalo</h2>
-    <p class="lead rv">Cinco bonus incluidos con tu compra. Sin costo extra.</p>
-    <div class="bonusbox rv">
-      <h3>Bonus incluidos</h3>
-      <div class="bono"><span class="ic">📊</span><span>Guía de tiempos y temperaturas por alimento — la chuleta para imprimir</span></div>
-      <div class="bono"><span class="ic">🥣</span><span>20 salsas y aderezos para acompañar todo</span></div>
-      <div class="bono"><span class="ic">🗓️</span><span>Menú semanal armado + lista de compras</span></div>
-      <div class="bono"><span class="ic">🧽</span><span>Limpieza y cuidado de tu freidora sin drama</span></div>
-      <div class="bono"><span class="ic">⚠️</span><span>Los 12 errores que arruinan tus recetas (y cómo evitarlos)</span></div>
+      <details class="area">
+        <summary><span class="ico">🏛</span> Sucesiones <span class="flecha">▼</span></summary>
+        <div class="desc">Sucesiones con y sin testamento, inscripción de bienes a nombre de los herederos, tramitación integral del expediente y resolución de conflictos entre herederos.</div>
+      </details>
+
+      <details class="area">
+        <summary><span class="ico">⚖</span> Divorcios <span class="flecha">▼</span></summary>
+        <div class="desc">Divorcios de común acuerdo o unilaterales, división de bienes, compensaciones económicas, alimentos y régimen de comunicación. Buscamos resolver rápido y proteger lo suyo.</div>
+      </details>
+
+      <details class="area">
+        <summary><span class="ico">📋</span> Derecho Civil <span class="flecha">▼</span></summary>
+        <div class="desc">Daños y perjuicios, desalojos, incumplimientos contractuales, propiedad horizontal y conflictos entre particulares. Reclamos y defensas en sede judicial y extrajudicial.</div>
+      </details>
+
+      <details class="area">
+        <summary><span class="ico">✍</span> Contratos Privados <span class="flecha">▼</span></summary>
+        <div class="desc">Redacción y revisión de contratos de locación, compraventa, acuerdos comerciales y convenios entre partes. Un contrato bien hecho evita el juicio de mañana.</div>
+      </details>
+
     </div>
   </div>
 </section>
 
-
-<section>
+<section id="porque">
   <div class="wrap">
-    <h2 class="rv">Así se ve por adentro</h2>
-    <p class="lead rv">Cada receta con sus ingredientes, el paso a paso y la temperatura y el tiempo exactos. Sin adivinar.</p>
-    <div class="muestra rv">
-      <img src="img/post1.png" alt="Receta: milanesas bien crocantes" loading="lazy">
-      <img src="img/post2.png" alt="Receta: gajos de papa a la española" loading="lazy">
-      <img src="img/post3.png" alt="Receta: brownies en la airfryer" loading="lazy">
+    <span class="kicker">Nuestro compromiso</span>
+    <h2 class="titulo">Por qué contratarnos</h2>
+    <p class="baja">Trabajamos para que usted entienda cada paso de su caso y se sienta acompañado.</p>
+    <div class="grid-porque">
+      <div class="card-p"><h3>Atención personalizada</h3><p>Su caso lo lleva un abogado, no un call center. Trato directo de principio a fin.</p></div>
+      <div class="card-p"><h3>Respuesta rápida</h3><p>Contestamos sus consultas a la brevedad y le avisamos de cada novedad del expediente.</p></div>
+      <div class="card-p"><h3>Honorarios claros</h3><p>Presupuesto y condiciones por escrito antes de empezar. Sin sorpresas.</p></div>
+      <div class="card-p"><h3>Experiencia comprobada</h3><p>Años de ejercicio en los fueros civil y de familia, con resultados concretos.</p></div>
     </div>
-    <p class="nota-muestra rv">Tres de las 503 recetas, tal cual las vas a ver.</p>
   </div>
 </section>
 
-<section class="alt" id="comprar">
+<section id="quienes">
   <div class="wrap">
-    <div class="precio-card rv">
-      <span class="lanz">Precio de lanzamiento</span>
-      <div class="tach">$29.980</div>
-      <div class="num">$14.990</div>
-      <div class="cuotas">MercadoPago · hasta 3 cuotas sin interés<br>Pago único — es tuyo para siempre</div>
-      <a class="cta" href="#" data-checkout>Descargar ahora<small>Acceso inmediato</small></a>
+    <span class="kicker">El estudio</span>
+    <h2 class="titulo">Quiénes somos</h2>
+    <div class="cols" style="margin-top:40px">
+      <div>
+        <p>Somos un estudio jurídico dedicado al derecho civil y de familia, con especial foco en amparos de salud, sucesiones, divorcios y contratos privados.</p>
+        <p>Creemos que un buen abogado no solo litiga: explica, acompaña y previene. Por eso priorizamos el asesoramiento claro, la confidencialidad y el análisis serio de cada situación antes de recomendar un camino.</p>
+        <p>Atendemos en Capital Federal y Provincia de Buenos Aires, de manera presencial y virtual.</p>
+      </div>
+      <div class="marco">
+        <div class="cifra">+10</div>
+        <div class="leyenda">años de ejercicio profesional</div>
+        <hr>
+        <div class="cifra">100%</div>
+        <div class="leyenda">de los casos atendidos por un abogado del estudio</div>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- TESTIMONIOS: sección reservada — solo reseñas reales de compradores. No inventar. -->
-
-<section>
+<section id="contacto">
   <div class="wrap">
-    <h2 class="rv">Preguntas frecuentes</h2>
-    <div style="margin-top:36px">
-      <details class="rv"><summary>¿Cómo lo recibo?</summary><p>Apenas se acredita el pago, la página te muestra el botón de descarga y además te llega el link por mail. Lo leés en el celular, tablet o lo imprimís.</p></details>
-      <details class="rv"><summary>¿Sirve para mi freidora?</summary><p>Sí. Las recetas funcionan en cualquier marca y tamaño. Si la tuya es chica, cada receta te dice cómo cocinar en tandas.</p></details>
-      <details class="rv"><summary>¿Es una suscripción?</summary><p>No. Pago único. El recetario queda tuyo para siempre.</p></details>
-      <details class="rv"><summary>¿Usa ingredientes raros?</summary><p>No. Todo se consigue en cualquier supermercado o verdulería de Argentina, en gramos y cucharadas. Cero "cups".</p></details>
+    <h2 class="titulo">Contanos tu caso</h2>
+    <p class="baja">La primera conversación es para entender tu situación y decirte con honestidad qué se puede hacer.</p>
+    <a class="btn grande" href="https://wa.me/5491100000000" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    <div class="datos">
+      📞 <a href="tel:+5491100000000">+54 9 11 0000-0000</a><br>
+      ✉️ <a href="mailto:contacto@ejemplo.com">contacto@ejemplo.com</a><br>
+      Capital Federal y Provincia de Buenos Aires
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="logo" style="font-family:'Fraunces',serif;font-weight:900;font-size:22px;color:var(--carbon);margin-bottom:10px">Cocina <em style="color:var(--terra);font-style:normal">de Aire</em></div>
-  <p>Recetarios digitales argentinos · <a href="mailto:hola@cocinadeaire.org">hola@cocinadeaire.org</a></p>
-  <p style="margin-top:6px">© 2026 Cocina de Aire</p>
+  © 2026 NOMBRE_ESTUDIO · Abogados. Todos los derechos reservados.
 </footer>
 
-<div class="mbar"><a href="#comprar" data-checkout>Quiero las +500 recetas — $14.990</a></div>
+<a class="wa-flotante" href="https://wa.me/5491100000000" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.5c1.2.5 2.5.8 3.8.8 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22.5c-1.2 0-2.4-.3-3.5-.8l-.6-.3-4.9.9 1-4.7-.3-.6c-.9-1.5-1.4-3.2-1.4-5 0-5.2 4.3-9.5 9.7-9.5s9.5 4.3 9.5 9.5-4.3 9.5-9.5 9.5zm5.3-7.1c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
 
-<div id="modal">
-  <div class="m-card">
-    <h3>¿A dónde te lo mandamos?</h3>
-    <p>Apenas pagues, la página te da la descarga y te mandamos el link a tu mail (y a tu WhatsApp si querés).</p>
-    <input id="m-email" type="email" placeholder="Tu mail" required>
-    <input id="m-wpp" type="tel" placeholder="WhatsApp (opcional, ej 5491122334455)">
-    <button id="m-ir" class="cta" style="font-size:17px">Ir a pagar con MercadoPago</button>
-    <p id="m-err"></p>
-    <p style="text-align:center;margin-top:14px"><a href="#" id="m-cerrar">cancelar</a></p>
-  </div>
-</div>
-
-<script>
-  const API_URL = "https://veriko-api-production.up.railway.app/recetario";
-  const modal = document.getElementById("modal");
-  document.querySelectorAll("[data-checkout]").forEach(a => a.addEventListener("click", e => {
-    e.preventDefault(); modal.style.display = "flex"; document.getElementById("m-email").focus();
-  }));
-  document.getElementById("m-cerrar").addEventListener("click", e => { e.preventDefault(); modal.style.display = "none"; });
-  document.getElementById("m-ir").addEventListener("click", async () => {
-    const email = document.getElementById("m-email").value.trim();
-    const err = document.getElementById("m-err");
-    if (!email.includes("@")) { err.textContent = "Poné un mail válido — es a donde te mandamos el recetario."; err.style.display = "block"; return; }
-    err.style.display = "none";
-    const btn = document.getElementById("m-ir"); btn.textContent = "Un segundo…";
-    try {
-      const r = await fetch(API_URL + "/checkout", { method: "POST", headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({ email, whatsapp: document.getElementById("m-wpp").value.trim() }) });
-      const d = await r.json();
-      if (d.init_point) { location.href = d.init_point; return; }
-      throw new Error("sin init_point");
-    } catch (e) {
-      err.textContent = "No pudimos iniciar el pago. Probá de nuevo o escribinos."; err.style.display = "block";
-      btn.textContent = "Ir a pagar con MercadoPago";
-    }
-  });
-
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } }), {threshold:.12});
-  document.querySelectorAll(".rv").forEach(el => io.observe(el));
-</script>
 </body>
 </html>
